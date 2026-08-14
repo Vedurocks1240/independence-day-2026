@@ -1,4 +1,4 @@
-const TARGET_DATE = new Date('2026-08-14T12:00:00+05:30');
+const TARGET_DATE = new Date('2026-08-14T24:00:00+05:30');
 
 function pad(n: number): string {
   return String(n).padStart(2, '0');
