@@ -1,0 +1,232 @@
+:root {
+  --saffron: #FF9932;
+  --white: #FFFFFF;
+  --green: #138808;
+  --navy: #000080;
+  --bg: #0a0a0f;
+  --bg-light: #12121a;
+  --glass-bg: rgba(10, 10, 15, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+#terminal-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.18;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 40px 48px;
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  animation: cardEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+@keyframes cardEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ascii-art {
+  font-family: var(--font-mono);
+  font-size: clamp(6px, 1.2vw, 10px);
+  line-height: 1.15;
+  color: var(--saffron);
+  margin-bottom: 24px;
+  white-space: pre;
+  overflow-x: auto;
+  text-shadow: 0 0 20px rgba(255, 153, 50, 0.3);
+}
+
+.flag-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto 24px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.strip {
+  height: 28px;
+  position: relative;
+}
+
+.strip.saffron {
+  background: linear-gradient(90deg, #e88620, var(--saffron), #e88620);
+}
+
+.strip.white {
+  background: linear-gradient(90deg, #f0f0f0, var(--white), #f0f0f0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.strip.green {
+  background: linear-gradient(90deg, #0e7006, var(--green), #0e7006);
+}
+
+.chakra {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--navy);
+  border-radius: 50%;
+  position: relative;
+  animation: chakraSpin 20s linear infinite;
+}
+
+.chakra::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    var(--navy) 0deg 3deg,
+    transparent 3deg 6deg
+  );
+  opacity: 0.9;
+}
+
+@keyframes chakraSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.tagline {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 72px;
+}
+
+.value {
+  font-family: var(--font-mono);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-shadow: 0 0 24px currentColor;
+}
+
+#cd-days { color: var(--saffron); }
+#cd-hours { color: var(--white); }
+#cd-minutes { color: var(--green); }
+#cd-seconds { color: var(--navy); }
+
+.label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.separator {
+  font-family: var(--font-mono);
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.15);
+  margin-top: -12px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.quote {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  min-height: 48px;
+  margin-bottom: 20px;
+  transition: opacity 0.5s ease;
+}
+
+.footer {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
+}
+
+@media (max-width: 520px) {
+  .glass-card {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+  .countdown {
+    gap: 8px;
+  }
+  .unit {
+    min-width: 56px;
+  }
+  .separator {
+    font-size: 24px;
+    margin-top: -8px;
+  }
+}

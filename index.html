@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="India Independence Day 2026 - 15 August Countdown" />
+    <title>Independence Day 2026 🇮🇳</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="terminal-canvas"></canvas>
+
+    <main class="hero">
+      <div class="glass-card">
+        <pre class="ascii-art" id="ascii-title"></pre>
+
+        <div class="flag-strip">
+          <div class="strip saffron"></div>
+          <div class="strip white">
+            <div class="chakra" id="chakra"></div>
+          </div>
+          <div class="strip green"></div>
+        </div>
+
+        <p class="tagline">15 August 2026 &middot; 12:00 IST &middot; 80th Independence Day</p>
+
+        <div class="countdown" id="countdown">
+          <div class="unit">
+            <span class="value" id="cd-days">00</span>
+            <span class="label">days</span>
+          </div>
+          <span class="separator">:</span>
+          <div class="unit">
+            <span class="value" id="cd-hours">00</span>
+            <span class="label">hours</span>
+          </div>
+          <span class="separator">:</span>
+          <div class="unit">
+            <span class="value" id="cd-minutes">00</span>
+            <span class="label">minutes</span>
+          </div>
+          <span class="separator">:</span>
+          <div class="unit">
+            <span class="value" id="cd-seconds">00</span>
+            <span class="label">seconds</span>
+          </div>
+        </div>
+
+        <div class="quote" id="quote"></div>
+
+        <div class="footer">Jai Hind 🇮🇳</div>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
