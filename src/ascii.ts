@@ -1,20 +1,19 @@
-const ASCII_TITLE = `
-    ██╗███╗   ██╗██████╗ ███████╗██████╗ ███████╗███╗   ██╗██████╗ ███████╗███╗   ██╗ ██████╗███████╗
-    ██║████╗  ██║██╔══██╗██╔════╝██╔══██╗██╔════╝████╗  ██║██╔══██╗██╔════╝████╗  ██║██╔════╝██╔════╝
-    ██║██╔██╗ ██║██║  ██║█████╗  ██████╔╝█████╗  ██╔██╗ ██║██║  ██║█████╗  ██╔██╗ ██║██║     █████╗  
-    ██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗██╔══╝  ██║╚██╗██║██║  ██║██╔══╝  ██║╚██╗██║██║     ██╔══╝  
-    ██║██║ ╚████║██████╔╝███████╗██║  ██║███████╗██║ ╚████║██████╔╝███████╗██║ ╚████║╚██████╗███████╗
-    ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚══════╝
-`;
+const ASCII_TITLE = "\n" +
+    "    ██╗███╗   ██╗██████╗ ███████╗██████╗ ███████╗███╗   ██╗██████╗ ███████╗███╗   ██╗ ██████╗███████╗\n" +
+    "    ██║████╗  ██║██╔══██╗██╔════╝██╔══██╗██╔════╝████╗  ██║██╔══██╗██╔════╝████╗  ██║██╔════╝██╔════╝\n" +
+    "    ██║██╔██╗ ██║██║  ██║█████╗  ██████╔╝█████╗  ██╔██╗ ██║██║  ██║█████╗  ██╔██╗ ██║██║     █████╗  \n" +
+    "    ██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗██╔══╝  ██║╚██╗██║██║  ██║██╔══╝  ██║╚██╗██║██║     ██╔══╝  \n" +
+    "    ██║██║ ╚████║██████╔╝███████╗██║  ██║███████╗██║ ╚████║██████╔╝███████╗██║ ╚████║╚██████╗███████╗\n" +
+    "    ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚══════╝\n";
 
 const QUOTES = [
-  '"At the stroke of the midnight hour, when the world sleeps, India will awake to life and freedom." — Jawaharlal Nehru',
-  '"Freedom is not worth having if it does not include the freedom to make mistakes." — Mahatma Gandhi',
-  '"Swaraj is my birthright and I shall have it." — Bal Gangadhar Tilak',
-  '"The best way to find yourself is to lose yourself in the service of others." — Mahatma Gandhi',
-  `A nation's culture resides in the hearts and in the soul of its people." — Mahatma Gandhi',
-  '"Give me blood, and I shall give you freedom." — Subhas Chandra Bose',
-  '"Inquilab Zindabad!" — Bhagat Singh',
+  "At the stroke of the midnight hour, when the world sleeps, India will awake to life and freedom. — Jawaharlal Nehru",
+  "Freedom is not worth having if it does not include the freedom to make mistakes. — Mahatma Gandhi",
+  "Swaraj is my birthright and I shall have it. — Bal Gangadhar Tilak",
+  "The best way to find yourself is to lose yourself in the service of others. — Mahatma Gandhi",
+  "A nation's culture resides in the hearts and in the soul of its people. — Mahatma Gandhi",
+  "Give me blood, and I shall give you freedom. — Subhas Chandra Bose",
+  "Inquilab Zindabad! — Bhagat Singh",
 ];
 
 export function renderAsciiTitle(): void {
