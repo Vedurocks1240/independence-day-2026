@@ -1,4 +1,4 @@
-const CHARS = '01अआइईउऊऋएऐओऔअंअःकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसहळक्षज्ञ' +
+const CHARS = '01\u0905\u0906\u0907\u0908\u0909\u090A\u090B\u090F\u0910\u0913\u0914\u0905\u0902\u0905\u0903\u0915\u0916\u0917\u0918\u0919\u091A\u091B\u091C\u091D\u091E\u091F\u0920\u0921\u0922\u0923\u0924\u0925\u0926\u0927\u0928\u092A\u092B\u092C\u092D\u092E\u092F\u0930\u0932\u0935\u0936\u0937\u0938\u0939\u0933\u0915\u094D\u0937\u091C\u094D\u091E' +
               '0123456789ABCDEF<>[]{}()|/\\+=-*&%$#@!~`^';
 
 interface TerminalCell {
@@ -10,20 +10,21 @@ interface TerminalCell {
 }
 
 const COLORS = [
-  '#FF9932', // saffron
-  '#138808', // green
-  '#000080', // navy
-  '#FFFFFF', // white
+  '#FF9932',
+  '#138808',
+  '#000080',
+  '#FFFFFF',
   '#e88620',
   '#0e7006',
 ];
 
 export function initTerminal(): void {
-  const canvas = document.getElementById('terminal-canvas') as HTMLCanvasElement;
+  const canvas = document.getElementById('terminal-canvas') as HTMLCanvasElement | null;
   if (!canvas) return;
 
-  const ctx = canvas.getContext('2d');
-  if (!ctx) return;
+  const maybeCtx = canvas.getContext('2d');
+  if (!maybeCtx) return;
+  const ctx = maybeCtx;
 
   let width = window.innerWidth;
   let height = window.innerHeight;
